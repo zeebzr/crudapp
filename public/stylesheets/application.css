@@ -1,0 +1,183 @@
+input.submit{
+
+}
+h1{
+	font-size:16px;
+}
+
+
+h2{
+	font-size:39px;
+	font-family: 'Roboto Slab', serif;
+	-webkit-font-smoothing: antialiased;
+	margin-bottom:13px;
+}
+
+h3{
+	text-align:center;
+}
+
+section{
+	margin-left:auto;
+	margin-right:auto;
+	width:700px;
+	height:600px;
+	position:relative;
+}
+
+.signup{
+	margin-left:auto;
+	margin-right:auto;
+	width:260px;
+	height:250px;
+	padding-top:270px;
+	color:#333333;
+	margin-top:0px;
+	position:relative;
+}
+#login{
+	float:right;
+padding-top:10px;
+padding-right:30px;
+margin-top:0px;
+position:relative;
+}
+
+nav{
+	width:100%;
+	height:53px;
+	background-color:white;
+	position:fixed;
+	clear:both;
+	z-index:2;
+	box-shadow:0px -17px 48px #888888;
+
+}
+
+#bg{
+background-image: url("../images/desk.jpg");
+
+width:100%;
+height:700px;
+background-repeat:no-repeat;
+background-size:cover;
+z-index:-1;
+}
+
+#bg1{
+background-image: url("../images/lol.jpg");
+
+width:100%;
+height:100%;
+background-repeat:no-repeat;
+background-size:cover;
+z-index:-10;
+}
+
+body {
+ margin-top: 0px;
+ margin-right: 0px;
+ margin-bottom: 0px;
+ margin-left: 0px;
+ 	font-family: 'Montserrat', sans-serif; 
+ 	-webkit-font-smoothing: antialiased;
+
+
+}
+
+#box{
+	margin-top:230px;
+}
+
+input[type="submit"]{
+	border:none;
+	background-color:#E64C3C;
+	border-radius:2px;
+	color:white;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:5px;
+	padding-bottom:5px;
+	font-size:16px;
+	float:right;
+
+}
+
+input { 
+	float: right;
+	clear:both; 
+}
+
+#logo{
+	width:300px;
+	margin:none;
+	position:relative;
+	float:left;
+	margin-left:50px;
+
+}
+
+#logo.hover{
+	font-color:red;
+}
+
+#container{
+	position:relative;
+}
+
+.btn-default {
+	margin-top:0px;
+
+	background-color:#E64C3C;
+	background-image:none;
+	text-shadow:none;
+	border-color:white;
+	color:white;
+}
+
+#signin{
+	float:right;
+	margin-top:10px;
+	margin-right:20px;
+
+}
+
+#button1{
+	margin-top:10px;
+	float:right;
+}
+
+.btn-default:hover{
+	background-color:white;
+	color:#e64c3c;
+	border-color:#e64c3c;
+	border-width:1.8px;
+}
+
+.col-md-4{
+	margin-left:auto;
+	margin-right:auto;
+	float:left;
+}
+
+.row{
+	margin-top:100px;
+}
+
+ .round {
+	      border-radius: 50%;
+	      overflow: hidden;
+	      width: 200px;
+	      height: 200px;
+	      margin-left:auto;
+	      margin-right:auto;
+            }
+            .round img {
+                display: block;
+            /* Stretch 
+                  height: 100%;
+                  width: 100%; */
+            min-width: 100%;
+            min-height: 100%;
+            }
+

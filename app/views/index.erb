@@ -1,0 +1,20 @@
+<div id="bg1">
+<br><br><br><br><br><br>
+<h2><center>Wall of Shame</center></h2>
+<section>
+    <div class="row">
+
+<section>
+ <% @pins.each do |pin| %>
+		 <div class="col-md-4">
+            <div class="round">
+                <img src="<%= pin.image %>">
+            </div>
+            <h2><center><%= pin.title %></center></h2>
+           
+        		
+    </div>
+<% end %>
+</section>
+</div>
+

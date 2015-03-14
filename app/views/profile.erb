@@ -1,0 +1,54 @@
+
+
+
+<section class="signup">
+<form method="POST" action="/profile/edit">
+
+	<div class="form-group">
+	<label for="username">email</label>
+		<input type="email" placeholder="change email" id="email" value="<%= @user.email %>">
+	</div>
+
+	<div class="form-group">
+	<label for="username">password</label>
+		<input type="password" placeholder="change password" id="password" value="<%= @user.password %>">
+	</div>
+
+		<button id="button1" type="submit" class="btn btn-default">Submit</button>
+	
+</form>
+</section>
+
+<br><br><br>
+<br><br><br>	
+	<br><br><br>	
+<section>
+
+<% if current_user %>
+ <% @user.pins.empty? %>
+<!--  .empty only works for an array -->
+ <h1> NO pins </h1>
+
+ <% else %> 
+
+ <h2><center>Here is all your pins</center></h2>
+ <% @user.pins.each do |pin| %>
+
+         <div class="col-md-6">
+            <div class="round">
+                <img src="<%= pin.image %>">
+            </div>
+            <h2><center><%= pin.title %></center></h2>
+            <h1><%= pin.text %></h1>
+            <form class="form-inline" method="POST" action="/pins/delete">
+            	<div classs="form-group">
+            	<input type="hidden" name="_method" value="delete"/>
+            	<input type="hidden" name="id" value="<%= pin.id %>">
+            		<button type="submit" class="btn btn-default">delete</button>
+            	</div>
+            </form>
+        </div>
+    </div>
+<% end %>
+</section>
+<% end%>
