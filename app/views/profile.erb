@@ -1,17 +1,14 @@
-
-
-
 <section class="signup">
 <form method="POST" action="/profile/edit">
 
 	<div class="form-group">
 	<label for="username">email</label>
-		<input type="email" placeholder="change email" id="email" value="<%= @user.email %>">
+		<input type="email" placeholder="change email" id="email" value="<%= @current_user.email %>">
 	</div>
 
 	<div class="form-group">
 	<label for="username">password</label>
-		<input type="password" placeholder="change password" id="password" value="<%= @user.password %>">
+		<input type="password" placeholder="change password" id="password" value="<%= @current_user.password %>">
 	</div>
 
 		<button id="button1" type="submit" class="btn btn-default">Submit</button>
@@ -25,7 +22,7 @@
 <section>
 
 <% if current_user %>
- <% @user.pins.empty? %>
+ <% @current_user.pins.empty? %>
 <!--  .empty only works for an array -->
  <h1> NO pins </h1>
 

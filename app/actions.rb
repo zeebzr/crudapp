@@ -1,9 +1,9 @@
 require 'pry'
+
 helpers do
 
 	def current_user
-		@current_user = User.find_by(id:session[:user_id]) if session[:user_id]
-		
+		@current_user = User.find_by(id:session[:user_id]) if session[:user_id]		
 	end
 	
 end
@@ -18,12 +18,10 @@ end
 # end
 
 get '/login' do
-    erb :login_signup
+  erb :login_signup
 end
 
-
 get '/profile' do
-	
 	erb :profile
 end
 
@@ -31,16 +29,14 @@ get '/signup' do
 	erb :login_signup
 end
 
-get '/pins' do
-	
-    erb :pins
+get '/pins' do	
+  erb :pins
 end
 
 get '/pins/new' do
-
 end
-get '/pins/delete' do
 
+get '/pins/delete' do
 end
 
 get '/pins/:id' do
@@ -58,35 +54,31 @@ get '/profile/edit' do
 end
 
 get '/' do
-    @pins = Pin.all.reverse
-    erb :index
+  @pins = Pin.all.reverse
+  erb :index
 end
 
 post '/profile/edit' do
-
-
 	user = User.find_by(email: params[:email])
  	email = params[:email]
-    password = params[:password]
+  password = params[:password]
 
 	profile = current_user.update(email: params[:email], password: params[:password])
 	
 	redirect '/'
-
 end
 
 # post 
 
 post '/login' do
-
 	@user = User.find_by(email: params[:email])
 
 	if @user.password == params[:password]
-    	session[:user_id] = @user.id
-    	redirect 'profile'
-    else
-    	redirect '/'
-    end
+  	session[:user_id] = @user.id
+  	redirect 'profile'
+  else
+  	redirect '/'
+  end
 end
 
 post '/logout' do
@@ -114,27 +106,24 @@ end
 
 
 post '/pins/new' do
-  	title = params[:title]
-    image = params[:image]
-    text = params[:text]
+	title = params[:title]
+  image = params[:image]
+  text = params[:text]
 
- if title == "" 	
+  if title == "" 	
     redirect "/"
-    end
+  end
 
- if text == "" 	
+  if text == "" 	
     redirect "/"
-    end
+  end
 
-    if image == "" 	
+  if image == "" 	
     redirect "/"
-    end
+  end
 
-    pin = current_user.pins.create(title: params[:title], image: params[:image], text: params[:text]) 
-    redirect "/pins/#{pin.id}"
-
-   
-    
+  pin = current_user.pins.create(title: params[:title], image: params[:image], text: params[:text]) 
+  redirect "/pins/#{pin.id}"   
 end
 
 # post "/pins/delete" do
